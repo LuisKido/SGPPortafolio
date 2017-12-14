@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAF63AC6-078C-4FCB-9791-3392813302E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestionPermisos</RootNamespace>
+    <AssemblyName>GestionPermisos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomTransparentPanel">
+      <HintPath>..\..\CustomTransparentPanel\CustomTransparentPanel\obj\Debug\CustomTransparentPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MRG.Controls.UI, Version=1.0.6060.19873, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\MRG.Controls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\..\..\..\..\Desktop\ObjectListViewDemo\ObjectListView\bin\Debug\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OrclConn\OrclConn\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OrclConn\OrclConn\Oracle.ManagedDataAccessDTC.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccessIOP, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OrclConn\OrclConn\Oracle.ManagedDataAccessIOP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\SGPServiceAsistencia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controladores\clsCore.cs" />
+    <Compile Include="Controladores\clsDS.cs" />
+    <Compile Include="Controladores\clsMDIClientSupport.cs" />
+    <Compile Include="Controladores\clsPrinter.cs" />
+    <Compile Include="Controladores\clsValidator.cs" />
+    <Compile Include="Controladores\clsXMLGenerator.cs" />
+    <Compile Include="Controladores\Controlador_Estado_Permiso.cs" />
+    <Compile Include="Controladores\Controlador_Generar_Resolucion.cs" />
+    <Compile Include="Controladores\Controlador_Login.cs" />
+    <Compile Include="Controladores\Controlador_Perfiles.cs" />
+    <Compile Include="Controladores\Controlador_Permisos.cs" />
+    <Compile Include="Controladores\Controlador_Permisos_Detalle.cs" />
+    <Compile Include="Controladores\Controlador_Resoluciones.cs" />
+    <Compile Include="Controladores\Controlador_Tipos_Permisos.cs" />
+    <Compile Include="Controladores\Controlador_Unidades.cs" />
+    <Compile Include="Controladores\Controlador_Usuarios.cs" />
+    <Compile Include="DBService\clsCypher.cs" />
+    <Compile Include="DBService\clsHandShake.cs" />
+    <Compile Include="DBService\clsOracleDB.cs" />
+    <Compile Include="frmCambiarPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarPass.Designer.cs">
+      <DependentUpon>frmCambiarPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadoPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadoPermiso.Designer.cs">
+      <DependentUpon>frmEstadoPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeneradorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneradorReportes.Designer.cs">
+      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarResolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarResolucion.Designer.cs">
+      <DependentUpon>frmGenerarResolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarPermisos.Designer.cs">
+      <DependentUpon>frmGestionarPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarPermisos.Designer.cs">
+      <DependentUpon>frmListarPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarResoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarResoluciones.Designer.cs">
+      <DependentUpon>frmListarResoluciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarPerfiles.Designer.cs">
+      <DependentUpon>frmListarPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfil.Designer.cs">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPermiso.Designer.cs">
+      <DependentUpon>frmPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarTiposPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarTiposPermisos.Designer.cs">
+      <DependentUpon>frmListarTiposPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarUnidades.Designer.cs">
+      <DependentUpon>frmListarUnidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarUsuarios.Designer.cs">
+      <DependentUpon>frmListarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteValidadorPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteValidadorPermisos.Designer.cs">
+      <DependentUpon>frmReporteValidadorPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoPermiso.Designer.cs">
+      <DependentUpon>frmTipoPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnidad.Designer.cs">
+      <DependentUpon>frmUnidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidadorDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidadorDocumentos.Designer.cs">
+      <DependentUpon>frmValidadorDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCambiarPass.resx">
+      <DependentUpon>frmCambiarPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadoPermiso.resx">
+      <DependentUpon>frmEstadoPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeneradorReportes.resx">
+      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarResolucion.resx">
+      <DependentUpon>frmGenerarResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarPermisos.resx">
+      <DependentUpon>frmGestionarPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarPermisos.resx">
+      <DependentUpon>frmListarPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarResoluciones.resx">
+      <DependentUpon>frmListarResoluciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarPerfiles.resx">
+      <DependentUpon>frmListarPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfil.resx">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermiso.resx">
+      <DependentUpon>frmPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarTiposPermisos.resx">
+      <DependentUpon>frmListarTiposPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarUnidades.resx">
+      <DependentUpon>frmListarUnidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarUsuarios.resx">
+      <DependentUpon>frmListarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteValidadorPermisos.resx">
+      <DependentUpon>frmReporteValidadorPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoPermiso.resx">
+      <DependentUpon>frmTipoPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnidad.resx">
+      <DependentUpon>frmUnidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidadorDocumentos.resx">
+      <DependentUpon>frmValidadorDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Connected Services\SGPServiceAsistencia\SGPService.wsdl" />
+    <None Include="Connected Services\SGPServiceAsistencia\SGPService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SGPServiceAsistencia\SGPService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SGPServiceAsistencia\SGPService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista hermosa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SGPServiceAsistencia\configuration91.svcinfo" />
+    <None Include="Connected Services\SGPServiceAsistencia\configuration.svcinfo" />
+    <None Include="Connected Services\SGPServiceAsistencia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Library\CustomTransparentPanel.dll" />
+    <Content Include="Library\MRG.Controls.UI.dll" />
+    <Content Include="Library\ObjectListView.dll" />
+    <Content Include="Library\Oracle.ManagedDataAccess.dll" />
+    <Content Include="Library\Oracle.ManagedDataAccessDTC.dll" />
+    <Content Include="Library\Oracle.ManagedDataAccessIOP.dll" />
+    <None Include="Resources\no_image_user_profile.png" />
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SGPServiceAsistencia\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
